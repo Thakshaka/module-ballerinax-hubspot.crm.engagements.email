@@ -79,4 +79,186 @@ service / on new http:Listener(8081) {
 
         check caller->respond(response);
     }
+
+    resource function get .(http:Caller caller, http:Request req) returns error? {
+        json response = {
+            "paging": {
+                "next": {
+                "link": "?after=NTI1Cg%3D%3D",
+                "after": "NTI1Cg%3D%3D"
+                }
+            },
+            "results": [
+                {
+                "associations": {
+                    "additionalProp1": {
+                    "paging": {
+                        "next": null,
+                        "prev": {
+                        "before": "string",
+                        "link": "string"
+                        }
+                    },
+                    "results": [
+                        {
+                        "id": "string",
+                        "type": "string"
+                        }
+                    ]
+                    },
+                    "additionalProp2": {
+                    "paging": {
+                        "next": null,
+                        "prev": {
+                        "before": "string",
+                        "link": "string"
+                        }
+                    },
+                    "results": [
+                        {
+                        "id": "string",
+                        "type": "string"
+                        }
+                    ]
+                    },
+                    "additionalProp3": {
+                    "paging": {
+                        "next": null,
+                        "prev": {
+                        "before": "string",
+                        "link": "string"
+                        }
+                    },
+                    "results": [
+                        {
+                        "id": "string",
+                        "type": "string"
+                        }
+                    ]
+                    }
+                },
+                "createdAt": "2025-02-14T05:56:04.158Z",
+                "archived": true,
+                "archivedAt": "2025-02-14T05:56:04.158Z",
+                "propertiesWithHistory": {
+                    "additionalProp1": [
+                    {
+                        "sourceId": "string",
+                        "sourceType": "string",
+                        "sourceLabel": "string",
+                        "updatedByUserId": 0,
+                        "value": "string",
+                        "timestamp": "2025-02-14T05:56:04.158Z"
+                    }
+                    ],
+                    "additionalProp2": [
+                    {
+                        "sourceId": "string",
+                        "sourceType": "string",
+                        "sourceLabel": "string",
+                        "updatedByUserId": 0,
+                        "value": "string",
+                        "timestamp": "2025-02-14T05:56:04.158Z"
+                    }
+                    ],
+                    "additionalProp3": [
+                    {
+                        "sourceId": "string",
+                        "sourceType": "string",
+                        "sourceLabel": "string",
+                        "updatedByUserId": 0,
+                        "value": "string",
+                        "timestamp": "2025-02-14T05:56:04.158Z"
+                    }
+                    ]
+                },
+                "id": "string",
+                "properties": {
+                    "additionalProp1": "string",
+                    "additionalProp2": "string",
+                    "additionalProp3": "string"
+                },
+                "updatedAt": "2025-02-14T05:56:04.158Z"
+                }
+            ]
+            };
+
+        check caller->respond(response);
+    }
+
+    resource function post batch/create(http:Caller caller, http:Request req) returns error? {
+        // Simulate the response for creating a new email
+        json payload = check req.getJsonPayload();
+        string property_date = check payload.properties.property_date.ensureType();
+        string property_radio = check payload.properties.property_radio.ensureType();
+        string property_number = check payload.properties.property_number.ensureType();
+        string property_string = check payload.properties.property_string.ensureType(); 
+        string property_checkbox = check payload.properties.property_checkbox.ensureType();
+        string property_dropdown = check payload.properties.property_dropdown.ensureType();
+        string property_multiple_checkboxes = check payload.properties.property_multiple_checkboxes.ensureType();
+
+        json response = {
+            "completedAt": "2025-02-14T05:56:04.129Z",
+            "requestedAt": "2025-02-14T05:56:04.129Z",
+            "startedAt": "2025-02-14T05:56:04.129Z",
+            "links": {
+                "additionalProp1": "string",
+                "additionalProp2": "string",
+                "additionalProp3": "string"
+            },
+            "results": [
+                {
+                "createdAt": "2025-02-14T05:56:04.129Z",
+                "archived": false,
+                "archivedAt": "2025-02-14T05:56:04.129Z",
+                "propertiesWithHistory": {
+                    "additionalProp1": [
+                    {
+                        "sourceId": "string",
+                        "sourceType": "string",
+                        "sourceLabel": "string",
+                        "updatedByUserId": 0,
+                        "value": "string",
+                        "timestamp": "2025-02-14T05:56:04.129Z"
+                    }
+                    ],
+                    "additionalProp2": [
+                    {
+                        "sourceId": "string",
+                        "sourceType": "string",
+                        "sourceLabel": "string",
+                        "updatedByUserId": 0,
+                        "value": "string",
+                        "timestamp": "2025-02-14T05:56:04.129Z"
+                    }
+                    ],
+                    "additionalProp3": [
+                    {
+                        "sourceId": "string",
+                        "sourceType": "string",
+                        "sourceLabel": "string",
+                        "updatedByUserId": 0,
+                        "value": "string",
+                        "timestamp": "2025-02-14T05:56:04.129Z"
+                    }
+                    ]
+                },
+                "id": "512",
+                "properties": {
+                    "property_date": property_date,
+                    "property_radio": property_radio,
+                    "property_number": property_number,
+                    "property_string": property_string,
+                    "property_checkbox": property_checkbox,
+                    "property_dropdown": property_dropdown,
+                    "property_multiple_checkboxes": property_multiple_checkboxes
+                },
+                "updatedAt": "2025-02-14T05:56:04.129Z"
+                }
+            ],
+            "status": "PENDING"
+            };
+
+        check caller->respond(response);
+    }
 }
