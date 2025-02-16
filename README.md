@@ -52,7 +52,7 @@ Within app developer accounts, you can create a [developer test account](https:/
 
 1. Move to the Auth Tab. (Second tab next to App Info)
 
-   ![Hubspot Developer Config Auth](https://raw.githubusercontent.com/Thakshaka/module-ballerinax-hubspot.crm.engagements.email/refs/heads/main/docs/resources/auth_section.png )
+   ![Hubspot Developer Config Auth](https://raw.githubusercontent.com/Thakshaka/module-ballerinax-hubspot.crm.engagements.email/refs/heads/main/docs/resources/create_app_2.png )
 
 2. In the Scopes section, add the following scope for your app using the "Add new scope" button.
 
