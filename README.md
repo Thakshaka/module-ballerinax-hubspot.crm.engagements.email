@@ -126,7 +126,68 @@ Before proceeding with the Quickstart, ensure you have obtained the Access Token
 
 ## Quickstart
 
-[//]: # (TODO: Add a quickstart guide to demonstrate a basic functionality of the module, including sample code snippets.)
+To use the `HubSpot CRM Engagements Email` connector in your Ballerina application, update the `.bal` file as follows:
+
+### Step 1: Import the module
+
+Import the `hubspot.crm.engagements.email` module and `oauth2` module.
+
+```ballerina
+import ballerinax/hubspot.crm.engagements.email as hsceemail;
+import ballerina/oauth2;
+```
+
+### Step 2: Instantiate a new connector
+
+1. Create a `Config.toml` file and, configure the obtained credentials in the above steps as follows:
+
+   ```toml
+    clientId = <Client Id>
+    clientSecret = <Client Secret>
+    refreshToken = <Refresh Token>
+   ```
+
+2. Instantiate a `hsceemail:ConnectionConfig` with the obtained credentials and initialize the connector with it.
+
+    ```ballerina 
+    configurable string clientId = ?;
+    configurable string clientSecret = ?;
+    configurable string refreshToken = ?;
+
+    OAuth2RefreshTokenGrantConfig auth = {
+         clientId,
+         clientSecret,
+         refreshToken,
+         credentialBearer: oauth2:POST_BODY_BEARER
+    };
+
+    final hsceemail:Client hsceemailClient = check new ({auth});
+    ```
+
+### Step 3: Invoke the connector operation
+
+Now, utilize the available connector operations. A sample usecase is shown below.
+
+#### Read a batch of emails by internal ID, or unique property values
+    
+```ballerina
+public function main() returns error? {
+    hsceemail:BatchResponseSimplePublicObject|BatchResponseSimplePublicObjectWithErrors response = check hubspotClient->/batch/read.post({
+        "propertiesWithHistory": [
+            "string"
+        ],
+        "idProperty": "string",
+        "inputs": [
+            {
+            "id": testBatchId
+            }
+        ],
+        "properties": [
+            "string"
+        ]
+    });
+}
+```
 
 ## Examples
 
