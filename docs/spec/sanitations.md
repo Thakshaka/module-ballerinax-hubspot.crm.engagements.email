@@ -29,9 +29,7 @@ These changes are done in order to improve the overall usability, and as workaro
 - **Original**: 
 ```json 
     "format": "date-time"
-4. Update the API summaries and descriptions
-
-- **Reason**: To make them more meaningful
+4. Update the API summaries and descriptions to make them more meaningful
 
 ## OpenAPI cli command
 
