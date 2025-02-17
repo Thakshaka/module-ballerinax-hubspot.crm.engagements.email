@@ -22,8 +22,6 @@ These changes are done in order to improve the overall usability, and as workaro
 - **Original**: Paths included common prefix above in each endpoint. (eg: `/crm/v3/objects/emails/search`)
 
 - **Updated**: Common prefix is now removed from the endpoints as it is included in the base URL.
-  - **Original**: `/crm/v3/objects/emails/search`
-  - **Updated**: `/search`
 
 - **Reason**:  This change simplifies the API paths, making them shorter and more readable.
 
@@ -31,14 +29,6 @@ These changes are done in order to improve the overall usability, and as workaro
 - **Original**: 
 ```json 
     "format": "date-time"
-```
-- **Updated**: 
-```json 
-    "format": "datetime"
-```
-
-- **Reason**:  The specification originally uses `"date-time"` which is unsupported by the openapi generator tool. This change to `"datetime"` ensures it is handled correctly.
-
 4. Update the API summaries and descriptions
 
 - **Reason**: To make them more meaningful
