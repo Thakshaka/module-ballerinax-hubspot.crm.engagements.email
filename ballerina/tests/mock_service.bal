@@ -60,7 +60,6 @@ service / on new http:Listener(9090) {
             },
             updatedAt: "2025-02-17T06:17:42.829Z"
         };
-
         return response;
     }
 
@@ -82,7 +81,6 @@ service / on new http:Listener(9090) {
             },
             updatedAt: "2025-02-14T06:43:02.683Z"
         };
-
         return response;
     }
 
@@ -107,7 +105,6 @@ service / on new http:Listener(9090) {
             },
             "updatedAt": "2025-02-18T09:07:38.656Z"
         };
-
         return response;
     }
 
@@ -147,7 +144,6 @@ service / on new http:Listener(9090) {
             ],
             status: "COMPLETE"
         };
-
         return response;
     }
 
@@ -181,7 +177,6 @@ service / on new http:Listener(9090) {
             ],
             status: "COMPLETE"
         };
-
         return response;
     }
 
@@ -208,7 +203,6 @@ service / on new http:Listener(9090) {
             ],
             status: "COMPLETE"
         };
-
         return response;
     }
 
@@ -219,7 +213,6 @@ service / on new http:Listener(9090) {
         } else {
             response.statusCode = http:STATUS_BAD_REQUEST;
         }
-
         return response;
     }
 
@@ -344,7 +337,6 @@ service / on new http:Listener(9090) {
                 }
             ]
         };
-
         return response;
     }
 }
