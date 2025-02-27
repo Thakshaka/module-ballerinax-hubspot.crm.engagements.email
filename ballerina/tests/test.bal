@@ -18,10 +18,10 @@ import ballerina/http;
 import ballerina/oauth2;
 import ballerina/test;
 
-configurable string clientId = ?;
-configurable string clientSecret = ?;
-configurable string refreshToken = ?;
-configurable boolean isLiveServer = ?;
+configurable string clientId = "client-id";
+configurable string clientSecret = "client-secret";
+configurable string refreshToken = "refresh-token";
+configurable boolean isLiveServer = false;
 
 string testEmailId = "";
 string testBatchId = "";
